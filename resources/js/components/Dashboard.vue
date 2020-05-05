@@ -91,12 +91,12 @@
               <i class="fas fa-fw fa-table"></i>
               <span>Tables</span></a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link">
               <i class="fas fa-fw fa-table"></i>
-              <span>
-              <router-link :to="{ name: 'list' }">Quản lí user</router-link></span></a>
-          </li>
+              <!-- <span> -->
+              <!-- <router-link :to="{ name: 'list' }">Quản lí user</router-link></span></a> -->
+          <!-- </li> -->
         </ul>
 
         <div id="content-wrapper">
