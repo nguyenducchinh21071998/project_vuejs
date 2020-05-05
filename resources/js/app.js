@@ -8,10 +8,6 @@ import Home from './components/Home.vue';
 import Register from './components/Register.vue';
 import Login from './components/Login.vue';
 import List from './components/List.vue';
-import CreateUser from './components/CreateUser.vue';
-import EditUser from './components/EditUser.vue';
-import Delete from './components/Delete.vue';
-import ViewUser from './components/ViewUser.vue';
 window.Axios = require('axios').default;
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
@@ -50,23 +46,7 @@ const router = new VueRouter({
         name: 'list',
         component: List,
         
-    },{
-        path: 'CreateUser',
-        name: 'create-user',
-        component: CreateUser,
-        
-    },{
-        path: 'Delete',
-        name: '/user-delete',
-        component: Delete,
-        
-    },{
-        path: 'ViewUser',
-        name: '/view/:id',
-        component: ViewUser,
-        
     },
-    {path: '/admin/list-user/edit/:id', component: EditUser, name: 'EditUser'},
 
     ]
 });
