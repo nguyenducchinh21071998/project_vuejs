@@ -1,0 +1,15 @@
+// タブレット以上でサイドメニューが表示される場合のマージンを調整しています。
+
+.l-2col {
+
+  @include mq(md) {
+    margin-left: 20rem ;
+  }
+
+  &.landscape {
+    @media screen and (max-width: 824px) and (orientation: landscape){
+      padding-bottom: 4rem !important;
+      margin-left: 0 !important;
+    }
+  }
+}

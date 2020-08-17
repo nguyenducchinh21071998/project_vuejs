@@ -1,0 +1,292 @@
+// 上記以外の細かな装飾に関する設定です。
+
+/*****************************************
+アドレス帳の区切り
+******************************************/
+.address-break {
+  position: relative;
+  display: flex;
+  max-width: 48rem;
+  margin: 0 auto -1.6rem;
+
+  &-top {
+    margin: 5.2rem auto -1.6rem;
+    @include mq(md) {
+      margin-top: 6rem;
+    }
+  }
+
+  &__wrap {
+    width: 42.4rem;
+    max-width: 100%;
+    margin-left: auto;
+    padding: 1.6rem 0;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: calc(100% - 5rem);
+      height: 0.1rem;
+      background: $base-color-106;
+    }
+  }
+
+  &__text {
+    width: 5rem;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+/*****************************************
+写真設定
+******************************************/
+.photoSetting {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35.9rem;
+  max-width: 100%;
+  padding: 0 0.8rem;
+
+  &.sp-hidden {
+    display: none;
+  }
+
+  @include mq(lg) {
+    position: absolute;
+    top: -9.7rem;
+    width: 37.5rem;
+    max-width: 37.5rem;
+    padding: 0;
+    z-index: 120;
+
+    &.sp-hidden {
+      display: block;
+    }
+  }
+
+  &__main {
+    border-radius: 1rem;
+    box-shadow: 0 0 0.1rem 0 rgba(0, 0, 0, 0.2);
+    background: $base-color-100;
+
+    @include mq(lg) {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -0.2rem);
+        border: 1.6rem solid transparent;
+        border-top: 1.6rem solid $base-color-100;
+      }
+    }
+  }
+
+  &__item {
+    padding: 1.2rem;
+    border-bottom: 1px solid $base-color-104;
+    cursor: pointer;
+  }
+
+  &__sub {
+    margin-top: 1.2rem;
+    border-radius: 1rem;
+    background: $base-color-100;
+    cursor: pointer;
+
+    @include mq(lg) {
+      display: none;
+    }
+  }
+
+  &__cancel {
+    text-align: center;
+    padding: 1.6rem;
+    color: $accent-color-002;
+    font-weight: bold;
+  }
+}
+
+.photoSetting-02 {
+  width: 34.3rem;
+  max-width: 100%;
+  border-radius: 0.4rem;
+  background: $base-color-100;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    height: 4.8rem;
+    padding-top: 0.1rem;
+    border-bottom: 0.1rem solid $base-color-108;
+  }
+
+  &__icon {
+    // margin-left: auto;
+    cursor: pointer;
+  }
+
+  &__main {
+    border-bottom: 0.1rem solid $base-color-108;
+  }
+
+  &__img {
+    position: relative;
+    height: 24rem;
+  }
+
+  &__img-border {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 14rem;
+    height: 18rem;
+    border : 0.8rem solid $accent-color-003;
+    z-index: 130;
+  }
+
+  &__img-film {
+    position: absolute;
+    background: $base-color-100;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+  }
+
+  &__img-photo {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__btn {
+    margin: 2.4rem 0;
+  }
+
+  &__footer {
+    padding: 1.2rem;
+  }
+}
+
+/*****************************************
+人を追加
+******************************************/
+.personAdd {
+  width: 34.3rem;
+  max-width: 100%;
+  margin: 2.4rem auto 0;
+
+  &__btn {
+    position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    // background-image: url('../../img/ico_plus.svg');
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    top: 50%;
+    left: 2.4rem;
+    transform: translateY(-50%);
+    }
+  }
+}
+
+.personCount {
+  display: none;
+  font-size: 1.4rem;
+  color: $base-color-201;
+
+  .personNum {
+    font-size: 1.6rem;
+    color: $base-color-112;
+  }
+}
+
+/*****************************************
+期日の選択
+******************************************/
+.termBox {
+  position: sticky;
+  top: 12.8rem;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  max-width: 48rem;
+  width: 100%;
+  background: rgba(242, 240, 237, 0.96);
+  z-index: 50;
+
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__box {
+    width: 13rem;
+    height: 4rem;
+
+    option {
+      text-indent: 3;
+    }
+  }
+
+  &__symbol {
+    width: 4rem;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+
+.adminMessage {
+  text-align: center;
+  margin: 2.4rem auto;
+
+  &__ttl {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
+
+
+.employeeAdd {
+  text-align: center;
+
+  &__message {
+    position: relative;
+    width: 29.5rem;
+    margin: 2.4rem auto;
+    padding: 1.2rem;
+    background: $base-color-101;
+    border-radius: 1rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 95%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 15px solid transparent;
+      border-bottom: 15px solid  $base-color-101;
+    }
+  }
+}
+

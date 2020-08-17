@@ -1,0 +1,591 @@
+// フォームに関する設定です。フォームレイアウトのリセットはbase.scssに記入しています。
+
+/*****************************************
+フォームパーツ
+******************************************/
+// c-form__txt
+.c-form__txt {
+  width: 100%;
+  padding: 1.4rem !important;
+  outline: none !important;;
+  border: 0.1rem solid $base-color-109 !important;;
+  border-radius: 0.4rem !important;
+  background: $base-color-101 !important;;
+  color: $base-color-105;
+  font-size: 1.6rem;
+  cursor: pointer;
+
+  &.bg-gray {
+    background:$base-color-109 !important;
+  }
+
+  &.sm {
+    width: 14rem;
+  }
+
+  &::placeholder {
+    color: $base-color-201;
+    font-size: 1.6rem;
+    letter-spacing: 0;
+  }
+
+  &:focus {
+    background: $accent-color-005 !important;
+    border: 0.2rem solid $accent-color-006 !important;
+  }
+
+  &.error {
+    background: $accent-color-103 !important;;
+    border: 0.2rem solid $accent-color-102 !important;;
+  }
+}
+
+// c-form__password
+.c-form__password {
+  position: relative;
+
+  &-check {
+    display: none;
+  }
+
+  &-eye {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .eye-02 {
+    top: 73%;
+  }
+
+  &-img {
+    margin: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+}
+
+.eye-flex {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+// c-form__checkbox {
+.c-form__check {
+
+  &-box {
+    display: none;
+  }
+
+  &-box + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5.5rem;
+    cursor: pointer;
+  }
+
+  &-box + label::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -0.2rem;
+    left: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 0.2rem solid $base-color-110;
+    border-radius: 0.4rem;
+  }
+
+  &-box:checked + label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -0.2rem;
+    left: 0.5rem;
+    width: 1.8rem;
+    height: 1.2rem;
+    border-left: 0.4rem solid $base-color-105;
+    border-bottom: 0.4rem solid $base-color-105;
+    transform: rotate(-45deg);
+  }
+}
+
+/*****************************************
+フォーム
+******************************************/
+.c-form {
+  width: 34.3rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2.4rem;
+  border-radius: 1rem;
+  background: $base-color-101;
+
+  &__password {
+    margin-top: 1.6rem;
+
+    .note {
+      font-size: 1.2rem;
+      color: $base-color-105;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  &__mailConfirm {
+    margin-top: 1.6rem;
+  }
+
+  &__check {
+    margin-top: 2.4rem;
+  }
+
+  &__message {
+    margin-top: 2.4rem;
+
+    a {
+      color: $accent-color-002;
+      text-decoration: underline;
+    }
+  }
+
+  &__alert {
+    margin-top: 2.4rem;
+    color: $accent-color-102;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__label {
+
+    &.error {
+      color: $accent-color-102;
+    }
+
+    .required {
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: "必須";
+        margin-left: 1rem;
+        padding: 0 0.4rem;
+        border-radius: 0.2rem;
+        background: $accent-color-101;
+        color: $base-color-100;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  &__flex {
+    display: flex;
+    align-items: center;
+    margin-top: 2.4rem;
+  }
+
+  &__flexEye {
+    margin-top: -1.2rem;
+    margin-right: 2rem;
+  }
+
+  &__submit {
+    margin-top: 2.4rem;
+    padding-bottom: 2.4rem;
+  }
+
+  &__forget {
+    padding: 0 0 2.4rem;
+    text-align: center;
+  }
+
+  &__link {
+    color: $accent-color-002;
+    letter-spacing: 0;
+  }
+
+  &__create {
+    padding-top: 2.4rem;
+    color: $base-color-105;
+    border-top: 0.1rem solid $base-color-104;
+    text-align: center;
+    letter-spacing: 0;
+  }
+
+  &__corpLogo {
+    padding: 2.4rem 0;
+    text-align: center;
+    border-top: 0.1rem solid $base-color-104;
+    border-bottom: 0.1rem solid $base-color-104;
+  }
+
+  &__selectBox {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/*****************************************
+名刺設定
+******************************************/
+.c-cardSetting {
+  width: 34.3rem;
+  max-width: 100%;
+  margin: 2.4rem auto 0;
+  border-radius: 1rem;
+  background: $base-color-101;
+  color: $base-color-105;
+
+  &__header {
+    display: none;
+    position: relative;
+    padding: 1.2rem;
+    text-align: center;
+    border-bottom: 0.1rem solid $base-color-104;
+
+    &.show {
+      display: block;
+    }
+
+    @include mq(md) {
+      display: block;
+    }
+  }
+
+  &__body {
+    padding: 2.4rem;
+  }
+
+  &__txt-01 {
+    padding-bottom: 2.4rem;
+    text-align: center;
+    border-bottom: 0.1rem solid $base-color-104;
+    font-weight: bold;
+  }
+
+  &__txt-02 {
+    padding: 2.4rem 0;
+  }
+
+
+  &__label {
+    font-weight: bold;
+  }
+
+  &__form {
+    text-align: left;
+
+    input {
+      margin-top: 0.4rem;
+    }
+  }
+
+  &__form-box {
+    margin-top: 1.2rem;
+  }
+
+  &__footer {
+    text-align: center;
+    border-top: 0.1rem solid $base-color-104;
+  }
+
+  &__cancel {
+    display: block;
+    margin-top: 2.4rem;
+    color: $base-color-201;
+  }
+}
+
+/*****************************************
+名刺の編集
+******************************************/
+.c-cardEdit {
+
+  &__formItem {
+    margin-top: 1.6rem;
+  }
+
+  &__input {
+    textarea {
+      display: block;
+      height: 10rem;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.6rem;
+  }
+
+  &__btn {
+    width: 45.7%;
+    max-width: 12rem;
+    margin: 0 0.8rem;
+  }
+}
+
+/*****************************************
+名刺の編集
+******************************************/
+.c-contact {
+  width: 34.3rem;
+  max-width: 100%;
+  margin: 2.4rem auto 0;
+  border-radius: 1rem;
+  background: $base-color-101;
+  color: $base-color-105;
+
+  &__header {
+    display: none;
+    position: relative;
+    padding: 1.2rem;
+    text-align: center;
+    border-bottom: 0.1rem solid $base-color-104;
+
+    &.show {
+      display: block;
+    }
+
+    @include mq(md) {
+      display: block;
+    }
+  }
+
+  &__body {
+    padding: 2.4rem;
+  }
+
+  &__txt-01 {
+    padding-bottom: 2.4rem;
+    text-align: center;
+    border-bottom: 0.1rem solid $base-color-104;
+    font-weight: bold;
+  }
+
+  &__txt-02 {
+    padding: 2.4rem 0;
+  }
+
+  &__label {
+    font-weight: bold;
+  }
+
+  &__form {
+    text-align: left;
+
+    input {
+      margin-top: 0.4rem;
+    }
+  }
+
+  .selectbox {
+    width: 100%;
+    height: 4.8rem;
+    padding: 1.4rem;
+    color: $base-color-105;
+  }
+
+  &__form-box {
+    margin-top: 1.2rem;
+  }
+
+  &__footer {
+    text-align: center;
+    border-top: 0.1rem solid $base-color-104;
+  }
+
+  &__cancel {
+    display: block;
+    margin-top: 2.4rem;
+    color: $base-color-201;
+  }
+}
+
+/*****************************************
+お問い合わせ
+******************************************/
+.c-contact {
+  &__form {
+    padding: 2.4rem;
+  }
+
+  &__formItem {
+    margin-top: 1.6rem;
+  }
+
+  textarea {
+    height: 22.4rem;
+  }
+
+  &__submit {
+    margin: 2.4rem 0;
+  }
+
+  &__register {
+    margin-top: 0.4rem;
+    padding: 1.2rem;
+    border-radius: 0.4rem;
+    background: $base-color-109;
+  }
+
+  &__txt {
+    margin-top: 2.6rem;
+    padding-bottom :2.4rem;
+    border-bottom: 0.1rem solid $base-color-104;
+  }
+}
+
+/*****************************************
+受信履歴の期間
+******************************************/
+.controls{
+  position: relative;
+  // width: 13rem;
+  width: 14rem;
+  height: 4rem;
+
+	input[type="month"] {
+    padding: 0.7rem 0 0.7rem 0.7rem;
+    font-size: 1.6rem;
+    height: 4rem;
+    width: 100%;
+    background: $base-color-101;
+    border-radius: 0.4rem;
+    border: 0.1rem solid $base-color-109;
+    cursor: pointer;
+	}
+
+	label{
+		position: absolute;
+		left: 0;
+		top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0.7rem;
+    text-align: center;
+    color: $base-color-201;
+		font-size: 1.6rem;
+		display: inline-block;
+    background: $base-color-101;
+    border-radius: 0.4rem;
+    border: 0.1rem solid $base-color-109;
+	}
+}
+
+.textareaLabel.hide {
+  display:none;
+}
+
+.clear:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input[type="month"]{
+  &::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &::-webkit-clear-button {
+    margin-left: 0px;
+    margin-right: 5px;
+    }
+
+  &::-webkit-calendar-picker-indicator {
+    color: transparent;
+    // background: url("../../resource/img/pixicus/calendar.png") no-repeat;
+    background-size: auto;
+    padding: 2px 2px 4px 1px;
+    display: none;
+  }
+}
+
+/*****************************************
+クレジットカード設定
+******************************************/
+.c-creditCard {
+  padding: 2.4rem;
+
+  .c-form__img {
+
+    img {
+      width: 278rem;
+      max-width: 100%;
+    }
+  }
+
+  .c-form__item {
+    margin-top: 1.6rem;
+  }
+
+  input {
+    margin-top: 0.8rem;
+  }
+
+  &__selectBox {
+    display: flex;
+    align-items: center;
+
+    select {
+      width: 8rem;
+      padding: 0.95rem;
+    }
+
+    span {
+      margin-left: 0.8rem;
+      margin-right: 1.6rem;
+    }
+  }
+
+  &__btn {
+    padding: 2.4rem 0;
+    border-bottom: 0.1rem solid $base-color-104;
+  }
+
+  &__cancel {
+    text-align: center;
+    padding-top: 2.4rem;
+    color: $base-color-201;
+  }
+
+  &__check {
+    padding: 2.4rem;
+    margin-bottom: 2.4rem;
+    border: 0.1rem solid $base-color-104;
+    border-radius: 1rem;
+
+    &-ttl {
+      text-align: center;
+      padding-bottom: 1.6rem;
+      border-bottom: 0.1rem solid $base-color-104;
+    }
+
+    &-item {
+      padding: 1.6rem 0;
+      border-bottom: 0.1rem solid $base-color-104;
+    }
+
+    &-label {
+      font-size: 1.2rem;
+      color: $base-color-201
+    }
+  }
+
+  &__txt {
+    padding-top: 2.4rem;
+    border-top: 0.1rem solid $base-color-104;
+    font-size: 1.4rem;
+    color: $base-color-105;
+  }
+}

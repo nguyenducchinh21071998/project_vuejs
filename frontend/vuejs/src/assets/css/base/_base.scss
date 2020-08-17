@@ -1,0 +1,465 @@
+// 全体に関わる設定です。
+// サイズや余白を調整するクラス（width:〇remやmargin-top:〇remなど）もここにあります。
+
+/*****************************************
+base
+******************************************/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: $base-color-300;
+  color: $base-color-200;
+  font-size: 1.6rem;
+  font-family: "ヒラギノ角ゴ ProN","Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","BIZ UDPGothic","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+  font-weight: $font-weight-medium;
+  text-align: justify;
+  line-height: 1.5;
+  letter-spacing: 0.0625em;
+}
+
+a {
+  color: $base-color-200;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+ul {
+  list-style: none;
+}
+
+ul, li, dl, dt, dd, figure {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  border:none;
+  background:none;
+}
+
+textarea {
+  display: block;
+}
+
+input[type="text"],
+input[type="submit"],
+input[type="button"] {
+  border-radius: 0;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+input[type="text"]:-webkit-search-decoration,
+input[type="submit"]::-webkit-search-decoration,
+input[type="button"]::-webkit-search-decoration {
+  display: none;
+}
+
+input[type="text"]::focus,
+input[type="submit"]::focus,
+input[type="button"]::focus {
+  outline-offset: -2px;
+}
+
+button,
+input[type="text"]
+input[type="submit"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: none;
+  outline: none;
+  border-radius: 0.8rem;
+  background: transparent;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  border: 0.1rem solid #E4E4E4 !important;
+  height: 4.8rem;
+  padding: 0.95rem;
+  border-radius: 0.4rem !important;
+  cursor: pointer;
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+input,
+button,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font: inherit;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  display: none;
+}
+
+input[type='submit'],
+input[type='button'],
+label,
+button,
+select {
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.selectBox-wrap {
+  position: relative;
+  max-width: 100%;
+
+  &::after {
+    content: "";
+    background-image: url('../../img/select.svg');
+    width: 1.2rem;
+    height: 0.6rem;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    right: 1.2rem;
+    transform: translateY(-50%);
+  }
+}
+
+
+
+/*****************************************
+追加要素
+******************************************/
+// color
+.bg-primary {
+  background: $base-color-301 !important;
+}
+
+.bg-white {
+  background: $base-color-101 !important;
+}
+
+.bg-blue {
+  background: $accent-color-008 !important;
+}
+
+.bg-black {
+  background: rgba(0,0,0, 0.6) !important;
+}
+
+.bg-lightBlue {
+  background: $accent-color-009;
+}
+
+.bg-gray {
+  background: $base-color-109 !important;
+}
+
+// border
+.border-none {
+  border-bottom: 0 !important;
+}
+
+// text
+.fw-normal {
+  font-weight: normal !important;
+}
+
+.fw-bold {
+  font-weight: bold !important;
+}
+
+
+// position
+.text-left {
+  text-align: left;
+}
+
+.center-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 91%;
+
+  @include mq(md) {
+    margin: 0 10rem;
+  }
+
+  &-md {
+    @include mq(md) {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0 10rem;
+    }
+  }
+}
+
+// other
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.not-found {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0;
+}
+
+.asterisk {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 !important;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: left;
+  letter-spacing: 0;
+
+  &.alert {
+    color: $accent-color-101;
+  }
+
+  &::before {
+    content: "※";
+    margin-right: 0.5rem;
+  }
+}
+
+.screenshot {
+  margin-top: 2.4rem;
+
+  @include mq(lg) {
+    display: none;
+  }
+}
+
+.tac {
+  text-align: center !important;
+}
+
+.tar {
+  text-align: right !important;
+}
+
+.flex-end {
+  justify-content: flex-end !important;
+}
+
+.fz-14 {
+  font-size: 1.4rem !important;
+}
+
+.tab-hide {
+  @include mq(md) {
+    display: none !important;
+  }
+}
+
+.tab-show {
+  display: none;
+
+  @include mq(md) {
+    display: block !important;
+  }
+}
+
+/*****************************************
+余白とサイズの調整
+******************************************/
+// size
+.w-480 {
+  width: 48rem !important;
+}
+
+.w-220 {
+  width: 22rem !important;
+}
+
+.w-180 {
+  width: 18rem !important;
+}
+
+.w-140 {
+  width: 14rem !important;
+}
+
+.w-100 {
+  width: 10rem !important;
+}
+
+.w-80 {
+  width: 8rem !important;
+}
+
+.w-70 {
+  width: 7rem !important;
+}
+
+.h-50 {
+  height: 5rem !important;
+}
+
+.h-48 {
+  height: 4.8rem !important;
+}
+
+// margin
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.mt-8 {
+  margin-top: 0.8rem !important;
+}
+
+.mt-16 {
+  margin-top: 1.6rem !important;
+}
+
+.mt-24 {
+  margin-top: 2.4rem !important;
+}
+
+.mt-32 {
+  margin-top: 3.2rem !important;
+}
+
+.mt-46-tab {
+  @include mq(md) {
+    margin-top: 4.6rem !important;
+  }
+}
+
+.mb-80 {
+  margin-bottom: 5.6rem !important;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mb-24 {
+  margin-bottom: 2.4rem !important;
+}
+
+.ml-200 {
+  &-tab {
+    @include mq(md) {
+      margin-left: 20rem !important;
+    }
+  }
+}
+
+// padding
+.p-30 {
+  padding: 3rem !important;
+}
+
+.pt-0 {
+  padding-top: 0 !important;
+
+  &-tab {
+    @include mq(md) {
+      padding-top: 0 !important;
+    }
+  }
+}
+
+.pt-16-tab {
+  @include mq(md) {
+    padding-top: 1.6rem !important;
+  }
+}
+
+.pt-92 {
+  padding-top: 9.2rem !important;
+}
+
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+
+.pb-4 {
+  padding-bottom: 4rem !important;
+  &-tab {
+    padding-bottom: 4rem !important;
+  }
+}
+
+.pb-extend-01 {
+  padding-bottom:15.2rem !important;
+
+  @include mq(md) {
+    padding-bottom: 12.2rem !important;
+  }
+}
+
+.pb-extend-02 {
+  padding-bottom:15.8rem !important;
+
+  @include mq(md) {
+    padding-bottom: 12.8rem !important;
+  }
+
+  &.landscape {
+    @media screen and (orientation: landscape) {
+      padding-bottom: 9rem !important;
+    }
+  }
+}
+
+.pb-extend-03 {
+  padding-bottom: 10.2rem !important;
+
+  @include mq(md) {
+    padding-bottom: 12.2rem !important;
+  }
+}
+

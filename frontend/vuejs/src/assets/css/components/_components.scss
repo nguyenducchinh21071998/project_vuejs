@@ -1,0 +1,829 @@
+// 複数個所で使用している部品をまとめています。
+
+/*****************************************
+QRコード
+******************************************/
+.c-qr {
+  &__img {
+    display: block;
+    width: 21rem;
+    margin: 0 auto;
+    padding: 2.4rem;
+    background: $base-color-101;
+    border-radius: 1rem;
+  }
+}
+
+/*****************************************
+企業名の表示（上部）
+******************************************/
+.c-corp {
+  position: sticky;
+  top: 4.8rem;
+  margin: 0 auto;
+  padding: 1.6rem;
+  border-bottom: 0.1rem solid $base-color-106;
+  background: rgba(242, 240, 237, 0.96);
+  z-index: 20;
+
+  @include mq(md) {
+    top: 0;
+  }
+
+  span {
+    display: block;
+  }
+
+  &__font-03 {
+    color: $base-color-105;
+    font-size: 1.8rem;
+  }
+
+  &__font-sm {
+    margin-top: 0.2rem;
+    color: $base-color-201;
+    font-size: 1.2rem;
+  }
+
+  &-02 {
+    max-width: 48rem;
+  }
+}
+
+/*****************************************
+メニュー
+******************************************/
+.c-menu {
+  width: 34.3rem;
+  max-width: 100%;
+  margin: 1.6rem auto;
+  padding: 0 2.4rem;
+  background: $base-color-101;
+  border-radius: 1rem;
+
+  .menuList {
+    &__link {
+      display: flex;
+      justify-content: space-between;
+      padding: 2.4rem 0;
+      border-bottom: 1px solid $base-color-104;
+      color: $base-color-105;
+
+      &.hide::after {
+        content: none;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 2.4rem;
+        height: 2.4rem;
+        background-image: url('../../img/ico_arrow_1.svg');
+      }
+    }
+  }
+}
+
+.c-menuAdd {
+  width: 48rem;
+  max-width: 100%;
+  margin: 1.6rem auto 0;
+
+  &__item {
+    margin-top: 0.8rem;
+    padding: 1.2rem 2rem;
+    background: $base-color-101;
+    border-radius: 1rem;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 2.4rem;
+      height: 2.4rem;
+      background-image: url('../../img/ico_arrow_1.svg');
+    }
+  }
+}
+
+/*****************************************
+管理者用（ログイン・アカウント作成）
+******************************************/
+.c-admin {
+  width: 34.3rem;
+  max-width: 100%;
+  margin: 1.6rem auto 0;
+  border-radius: 1rem;
+  background: $base-color-101;
+  text-align: center;
+
+  &__header {
+    padding: 1.2rem;
+    border-bottom: 0.1rem solid $base-color-104;
+  }
+
+  &__ttl {
+    font-weight: bold;
+  }
+
+  &__body {
+    padding-bottom: 2rem;
+  }
+
+  &__item {
+    margin-top: 2rem;
+  }
+
+  &__link {
+    color: $accent-color-002;
+    letter-spacing: 0;
+  }
+}
+
+/*****************************************
+はじめてご利用の方へ
+******************************************/
+.c-guide {
+  width: 34.3rem;
+  max-width: 100%;
+  border-radius: 0.4rem;
+  background: $base-color-100;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.8rem;
+    padding-left: 2.4rem;
+    // padding: 2rem;
+    border-bottom: 0.1rem solid $base-color-108;
+  }
+
+  &__ttl {
+    color: $base-color-105;
+    letter-spacing: 0;
+    font-weight: bold;
+  }
+
+  &__icon {
+    cursor: pointer;
+  }
+
+  &__main {
+    padding: 2.4rem;
+  }
+
+  &__text {
+    padding-bottom: 2rem;
+    border-bottom: 0.1rem solid $base-color-104;
+
+    p {
+      margin-bottom: 1.6rem;
+      letter-spacing: 0.06em;
+    }
+  }
+
+  &__btn {
+    padding: 2rem 0;
+    border-bottom: 0.1rem solid $base-color-104;
+  }
+
+  &__btn-item {
+    margin-top: 1.6rem;
+  }
+
+  &__footer {
+    padding-top: 2rem;
+    text-align: center;
+  }
+
+  &__link {
+    color: $accent-color-002;
+  }
+}
+
+/*****************************************
+2列ボタン
+******************************************/
+.c-2colBtn {
+  width: 34.3rem;
+  max-width: 100%;
+  border-radius: 0.4rem;
+  background: $base-color-100;
+  text-align: center;
+
+  &__body {
+    padding: 2.4rem;
+  }
+
+  &__txt {
+    font-weight: bold;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+  &__item {
+    max-width: 48%;
+  }
+
+  &__link {
+    max-width: 100% !important;
+  }
+}
+
+.c-2colBtn-02 {
+  display: flex;
+  justify-content: space-between;
+  width: 29.6rem;
+  max-width: 100%;
+  margin: 0 auto;
+
+  &__link.btn {
+    padding: 0.8rem !important;
+  }
+}
+
+/*****************************************
+名刺設定コードの間違い
+******************************************/
+.c-codeMistake {
+  width: 34.3rem;
+  max-width: 100%;
+  border-radius: 0.4rem;
+  background: $base-color-100;
+  text-align: center;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    height: 4.8rem;
+    text-align: right;
+    flex-direction: row-reverse;
+    border-bottom: 0.1rem solid $base-color-108;
+  }
+
+  &__body {
+    padding: 2.4rem;
+  }
+
+  &__icon {
+    padding-bottom: 2.4rem;
+    border-bottom: 0.1rem solid $base-color-108;
+  }
+
+  &__alert {
+    margin-top: 1.6rem;
+    color: $accent-color-102;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+  }
+
+  &__txt {
+    padding-top: 2.4rem;
+    font-weight: bold;
+  }
+
+  &__btn {
+    margin-top: 1.6rem;
+  }
+}
+
+/*****************************************
+削除完了・名刺設定完了
+******************************************/
+.c-success {
+  width: 34rem;
+  max-width: 100%;
+  margin: 1.6rem auto;
+  padding: 2.4rem;
+  background: $base-color-101;
+  border-radius: 1rem;
+  text-align: center;
+
+  &__body {
+    padding-bottom: 2.4rem;
+    border-bottom: 0.1rem solid $base-color-111;
+  }
+
+  &__txt {
+    letter-spacing: 0;
+    font-weight: bold;
+
+    &-checked {
+      margin-top: 1.6rem;
+      color: $accent-color-007;
+      letter-spacing: 0.05em;
+      font-weight: bold;
+    }
+  }
+
+  &__cancel {
+    margin-top: 1.2rem;
+  }
+
+  &__link {
+    color: $accent-color-002;
+    letter-spacing: 0;
+  }
+
+  &__footer {
+    padding-top: 2.4rem;
+  }
+}
+
+/*****************************************
+パンくずリスト
+******************************************/
+.breadcrumb {
+  position: sticky;
+  top: 4.8rem;
+  max-width: 48rem;
+  width: 100%;
+  margin: 0 auto;
+  background: rgba(242, 240, 237, 0.96);
+  z-index: 20;
+
+  &__wrap {
+    padding: 1.2rem 0.8rem;
+    margin: 0 0.8rem;
+    border-bottom: 0.1rem solid $base-color-106;
+  }
+
+  &__list {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.4rem;
+
+    &::after {
+      content: "";
+      width: 1.6rem;
+      height: 1.6rem;
+      margin-left: 1.6rem;
+      background-image: url('../../img/breadcrumb.svg');
+      background-repeat: no-repeat;
+      object-fit: contain;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  &__link {
+    color: $accent-color-002;
+  }
+}
+
+/*****************************************
+社員を追加
+******************************************/
+.c-empAdd {
+  padding: 2.4rem;
+
+  figure {
+    margin: 0;
+  }
+
+  &__box {
+    padding: 1.6rem 0;
+    border-bottom: 0.1rem solid $base-color-104;
+  }
+
+  &__center {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__2col {
+    display: flex;
+    justify-content: space-between;
+
+    .c-form__item {
+      width: calc((100% - 1.6rem) / 2);
+    }
+  }
+
+  &__form {
+
+    .year {
+      width: 10rem;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__departmentBox {
+    width: 100%;
+    padding: 0.95rem;
+  }
+}
+
+.c-form__date {
+  display: flex;
+  margin-top: 1.6rem;
+
+  @include mq(md) {
+    margin-top: 0;
+  }
+
+  .date {
+    max-width: 8rem;
+    width: 21.333vw;
+  }
+}
+
+.c-form__join {
+  @include mq(md) {
+    display: flex;
+  }
+
+  span {
+    display: inline-block;
+    margin-left: 0.8rem;
+    margin-right: 2rem;
+    white-space: nowrap;
+  }
+}
+
+
+/*****************************************
+社員の並び順変更
+******************************************/
+.c-order {
+  position: sticky;
+  top: 4.8rem;
+  padding: 1.6rem 0 0.8rem;
+  border-bottom: 0.1rem solid $base-color-106;
+  z-index: 20;
+
+
+  @include mq(md) {
+    top: 0;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+
+    @include mq(lg) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    width: calc((100% - 2.4rem) / 3);
+
+
+    @include mq(lg) {
+      flex-direction: row;
+      width: auto;
+      align-items: center;
+      margin-right: 2.4rem;
+    }
+  }
+
+  &__label {
+    font-size: 1.4rem;
+
+    @include mq(lg) {
+      margin-right: 0.8rem;
+    }
+  }
+
+  &__selectBox {
+    font-size: 1.6rem;
+    padding: 0.95rem;
+    padding-right: 3rem;
+    background: $base-color-101;
+    width: 100%;
+
+  }
+}
+
+.selectBox-wrap.w-140 {
+  @include mq(md) {
+    width: 100% !important;
+  }
+}
+.selectBox-wrap.w-180 {
+  @include mq(md) {
+    width: 100% !important;
+  }
+}
+
+/*****************************************
+社員情報の編集
+******************************************/
+.c-empEdit {
+  padding: 2.4rem;
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.1rem solid $base-color-104;
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__font-01 {
+    font-size: 2rem;
+  }
+
+  &__font-02 {
+    font-size: 1.2rem;
+    color: $base-color-201;
+  }
+
+  &__font-03 {
+    font-size: 1.4rem;
+  }
+
+  &__font-04 {
+    font-size: 1.4rem;
+  }
+
+  &__box {
+    padding: 1.6rem 0;
+    border-bottom: 0.1rem solid $base-color-104;
+  }
+
+  &__dt {
+    font-size: 1.2rem;
+    color: $base-color-201;
+  }
+
+  &__btn {
+    padding-top: 1.6rem;
+  }
+
+  &__delete {
+    padding-top: 4rem;
+  }
+
+  &__cardSetting {
+    padding-top: 1.6rem;
+
+    &-txt {
+      text-align: center;
+    }
+
+    &-frame {
+      margin-top: 1.6rem;
+      padding: 1.6rem;
+      border-radius: 0.2rem;
+      background: $base-color-114;
+
+      @include mq(md) {
+        padding: 2.4rem 8rem;
+      }
+    }
+
+    &-box {
+      padding: 1.6rem;
+      background: $base-color-101;
+      border-radius: 0.8rem;
+
+      span {
+      margin-top: 2rem;
+      }
+
+      .btn {
+        margin-top: 4rem;
+      }
+    }
+  }
+
+  &__checkBox {
+    margin-bottom: 1.6rem;
+    position: relative;
+
+    &.checked {
+
+      .c-empEdit__plan {
+        background: $accent-color-010;
+        border: 0.1rem solid $accent-color-001;
+
+        &::after {
+          background-image: url('../../img/icon_checkbox-blue.svg');
+        }
+      }
+    }
+  }
+
+  &__check {
+    display: none;
+  }
+
+  &__plan {
+    display: flex;
+    padding: 1.6rem 1.6rem 1rem;
+    justify-content: space-between;
+    padding-left: 5.6rem;
+    border: 0.1rem solid $base-color-115;
+    border-radius: 0.4rem;
+    font-weight: bold;
+
+    &::after {
+      content: "";
+      background-image: url('../../img/icon_checkbox.svg');
+      position: absolute;
+      top: 50%;
+      left: 2rem;
+      transform: translateY(-50%);
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    &-contract {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gray {
+      color: $base-color-201;
+      font-size: 1.4rem;
+    }
+
+    &-check {
+      color :$accent-color-001;
+
+      .price {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__alert {
+    font-size: 1.4rem;
+    display: flex;
+
+    &::before {
+      content: "※";
+      width: 1.4rem;
+      margin-right: 0.8rem;
+    }
+  }
+
+  &__planBox {
+    margin-top: 1.6rem;
+    padding: 1.6rem;
+    text-align: center;
+    border: 0.1rem solid $base-color-104;
+    border-radius: 1rem;
+
+    &-plan {
+      padding: 1.2rem 2.4rem;
+      background: $base-color-300;
+      border-radius: 1rem;
+      font-weight: bold;
+      margin: 1.6rem 0;
+    }
+
+    &-alert {
+      text-align: left;
+      font-size: 1.4rem;
+      font-weight: bold;
+      background: $accent-color-104;
+      padding: 1.6rem;
+      border-radius: 0.4rem;
+      margin-top: 1.6rem;
+      color: $accent-color-105;
+    }
+  }
+
+  &__term {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/*****************************************
+会社情報の編集
+******************************************/
+.c-corpSetting {
+  padding: 2.4rem;
+
+  &__header {
+    padding-bottom: 1.2rem;
+    border-bottom: 0.1rem solid $base-color-104;
+
+    &-ttl {
+      font-size: 2rem;
+    }
+  }
+
+  &__main {
+    text-align: center;
+
+    &-txt {
+      color: $base-color-105;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.8rem auto 0;
+    width: 24rem;
+    height: 12rem;
+    color: $base-color-117;
+    font-size: 1.4rem;
+    border-radius: 0.2rem;
+    border: 0.1rem solid $base-color-104;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.2rem;
+    }
+  }
+
+  &__img {
+    width: 24rem;
+    height: 12rem;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 0.2rem;
+    z-index: 0;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: rgba(0, 0, 0, 0.4);
+      position: absolute;
+      border-radius: 0.2rem;
+      top: 0;
+      left: 0;
+    }
+
+    &::before {
+      content: "";
+      background-image: url('../../img/ico_camera.svg');
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 0.2rem;
+      width: 2.4rem;
+      height: 2.288rem;
+      z-index: 100;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    &-film {
+      position: absolute;
+      background: #000;
+      width: 100%;
+      height: 100%;
+      border-radius: 0.4rem;
+      opacity: 0.4;
+    }
+  }
+
+  &__box {
+    padding: 1.6rem;
+    border-bottom: 0.1rem solid $base-color-104;
+
+    .memo {
+      font-size: 1.2rem;
+      color: $base-color-105;
+    }
+
+    textarea {
+      height: 10rem;
+    }
+  }
+
+  &__selectBox {
+    width: 18.4rem;
+    padding: 0.95rem;
+  }
+}
+

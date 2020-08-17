@@ -1,0 +1,20 @@
+@import 'variables';
+
+.form-custom {
+    width: 320px !important;
+    .form-title {
+        text-align: left !important;
+        font-size: 20px !important;
+        color: #000 !important;
+    }
+    
+    .auth-forward {
+        font-size: 13px !important;
+        color: $btn-color !important;
+    }
+    
+    .auth-btn {
+        background-color: $btn-color !important;
+        border-color: unset !important;
+    }
+}

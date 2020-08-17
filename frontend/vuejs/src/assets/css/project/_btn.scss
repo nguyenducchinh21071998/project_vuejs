@@ -1,0 +1,139 @@
+// ボタンに関する設定です。
+
+/*****************************************
+ボタン
+******************************************/
+.btn {
+  display: block;
+  max-width: 34.3rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.2rem 0;
+  border: 0.1rem solid  $accent-color-001;
+  border-radius: 0.6rem;
+  text-align: center;
+  background: $base-color-101;
+  color: $accent-color-001;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+
+  &-header {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    width: 10rem;
+    padding: 0.45rem;
+    border-radius: 2.2rem;
+    font-size: 1.4rem;
+
+    &.admin {
+      border: none;
+      color: $base-color-113;
+    }
+
+    &.left {
+      right: inherit;
+      left: 0.8rem;
+    }
+  }
+
+  &-add {
+    width: 6.4rem;
+    font-size: 1.4rem;
+    padding: 1.2rem 0;
+  }
+
+  &-xs {
+    width: 14rem;
+    padding: 1.2rem 0;
+  }
+
+  &-sm {
+    width: 20rem;
+    padding: 1.2rem;
+  }
+
+  &-sm-02 {
+    width: 20rem;
+    padding: 0.8rem　0;
+  }
+
+  &-sm-round {
+    width: 20rem;
+    padding: 1.2rem;
+    border-radius: 2.2rem;
+  }
+
+  &-dashed {
+    border-style: dashed;
+  }
+
+  &-round {
+    width: 91.46%;
+    border-radius: 2.2rem;
+    border-radius: 5rem;
+  }
+
+  &-edit {
+    width: 24.7rem;
+    max-width: 100%;
+    border-radius: 5rem;
+    letter-spacing: 0;
+  }
+
+  &-edit-02 {
+    width: 12rem;
+    max-width: 100%;
+    line-height: 1.15;
+    padding: 1.2rem 0;
+  }
+
+  &-screenshot {
+    width: 27.5rem;
+    border-radius: 5rem;
+    letter-spacing: 0;
+  }
+}
+
+.btn-primary {
+  border: none;
+  background-color: $accent-color-003;
+  color: $base-color-100;
+}
+
+.btn-create {
+  border: none;
+  background: linear-gradient(to left,#FF305C, #FF4F34 40%,#FF7800);
+  color: $base-color-100;
+  letter-spacing: 0;
+}
+
+.btn-danger {
+  border: 0.1rem solid  $base-color-107;
+  color: $accent-color-101;
+  letter-spacing: 0;
+}
+
+.btn-danger-02 {
+  border: none;
+  background: $accent-color-101;
+  color: $base-color-100;
+  letter-spacing: 0.06em;
+}
+
+.btn-default {
+  border: 0.1rem solid $base-color-107;
+  color: $base-color-200;
+  letter-spacing: 0;
+}
+
+.btn-default-02 {
+  border: 0.1rem solid $base-color-107;
+  color: $base-color-201;
+  letter-spacing: 0;
+}
+
+.disabled {
+  opacity: 0.3;
+}

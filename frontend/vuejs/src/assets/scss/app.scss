@@ -1,0 +1,132 @@
+.d-inline-block {
+    display: inline-block;
+}
+
+.veevalidateError {
+    color: red;
+    display: block;
+}
+
+input.input-upload-file {
+    display: none;
+}
+
+// css toast
+input.company-postal-code {
+    width: 12rem !important;
+}
+
+div#b-toaster-top-right {
+    left: 0.25rem;
+    right: 1.25rem;
+}
+
+.b-toast .toast {
+    background-color: #fff;
+}
+.toast {
+    max-width: 350px;
+    overflow: hidden;
+    font-size: 1.6rem;
+    background-color: hsla(0,0%,100%,.85);
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    border-radius: .5rem;
+}
+.toast-header {
+    display: none;
+    align-items: center;
+    padding: .75rem .75rem;
+    color: #6c757d;
+    background-color: hsla(0,0%,100%,.85);
+    background-clip: padding-box;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
+.toast-body {
+    padding: 1.25rem;
+}
+
+.mr-2, .mx-2 {
+    margin-right: .5rem!important;
+}
+
+button.close {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.ml-auto, .mx-auto {
+    margin-left: auto!important;
+}
+.mb-1, .my-1 {
+    margin-bottom: .25rem!important;
+}
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+
+input.input-upload-file {
+    display: none;
+}
+
+// company upload image
+img.upload-corp-image {
+    height: -webkit-fill-available;
+}
+
+// user header
+div.l-header__txt.user-back-header {
+    margin-right: 200px;
+}
+
+// image qr code
+img.img-qr {
+   padding: 0px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+div.c-card__name {
+    text-align: left;
+}
+
+input::-ms-clear, input::-ms-reveal {
+    display: none;
+}
+.text__highlight {
+    background: #ffe3ae !important;
+}
+.page-item.active .page-link {
+    background-color: #39f;
+    border-color: #39f;
+}
+.page-link {
+    color: #39f;
+}
+.swal2-popup {
+    transform: scale(0.7);
+}
+.swal2-show {
+    -webkit-animation: swal2-show 0s !important;
+    animation: swal2-show 0s !important;
+}
+.required {
+    color: #dc1313;
+    font-size: 13px;
+}

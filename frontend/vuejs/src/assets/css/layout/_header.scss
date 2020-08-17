@@ -1,0 +1,70 @@
+// ヘッダーのレイアウトに関わる設定です。
+
+.l-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 0 0.1rem 0 rgba(0, 0, 0, 0.2);
+  z-index: 50;
+
+  .hide {
+    display: none;
+  }
+
+  &.tab-hide {
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  &__wrap {
+    position: relative;
+    padding: 1.2rem 1.6rem;
+    text-align: center;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    a {
+      padding: 1rem;
+    }
+  }
+
+  &__link {
+  }
+
+  &__txt {
+    color: $base-color-105;
+    font-weight: bold;
+  }
+
+  &__txtWhite {
+    color: $base-color-100;
+    font-weight: bold;
+  }
+
+  &__admin {
+    display: flex;
+    width: 17.5rem;
+    margin: 0 auto;
+    align-items: flex-end;
+  }
+
+  &__logo {
+    display: block;
+  }
+
+  &__adminTxt {
+    margin-left: 1.4rem;
+    padding-left: 1.4rem;
+    border-left: 0.1rem solid $base-color-401;
+    color: $base-color-100;
+    font-weight: $font-weight-bold;
+    line-height: 1.3;
+  }
+}
+

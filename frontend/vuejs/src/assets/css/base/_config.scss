@@ -1,0 +1,75 @@
+// ブレイクポイントと使用しているカラーをまとめています。
+
+// break-point
+$view-width-md: 768px;
+$view-width-lg: 1024px;
+
+$breakpoint-base: md;
+$breakpoints: (
+  'md': 'screen and (min-width: #{$view-width-md})',
+  'lg': 'screen and (min-width: #{$view-width-lg})'
+);
+
+@mixin mq($breakpoint: $breakpoint-base) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+//main
+$base-color-100: #FFFFFF;
+$base-color-101: #FDFDFD;
+$base-color-102: #DADDEF;
+$base-color-103: #EAECF6;
+$base-color-104: #ECECEC;
+$base-color-105: #423D3D;
+$base-color-106: #D9D8D5;
+$base-color-107: #DEDEDE;
+$base-color-108: #EAEAEC;
+$base-color-109: #E4E4E4;
+$base-color-110: #CFCFCF;
+$base-color-111: #E3E3E3;
+$base-color-112: #3D3D3D;
+$base-color-113: #2B3048;
+$base-color-114: #D4D4D4;
+$base-color-115: #D1D3D9;
+$base-color-116: #E5E5E5;
+$base-color-117: #999999;
+$base-color-200: #555555;
+$base-color-201: #8E8E8E;
+$base-color-202: #818181;
+$base-color-300: #F2F0ED;
+$base-color-301: #E0E2EE;
+$base-color-302: #000000;
+$base-color-303: #E4E3E0;
+$base-color-401: #5F697C;
+$base-color-402: #4B566C;
+
+// accent
+$accent-color-001: #3C59E5;
+$accent-color-002: #177BC3;
+$accent-color-003: #4E68E3;
+$accent-color-004: #485FF1;
+$accent-color-005: #F1F5F9;
+$accent-color-006: #5998C5;
+$accent-color-007: #79AC13;
+$accent-color-008: #37435B;
+$accent-color-009: #E9EDF2;
+$accent-color-010: #F4F5FC;
+
+$accent-color-101: #E34D63;
+$accent-color-102: #E05959;
+$accent-color-103: #FFF3F3;
+$accent-color-104: #FFF6E7;
+$accent-color-105: #976B0B;
+
+//font-weight
+$font-weight-black: 900;
+$font-weight-heavy: 800;
+$font-weight-bold: 700;
+$font-weight-demi-bold: 600;
+$font-weight-medium: 500;
+$font-weight-regular: 400;
+$font-weight-light: 300;
+$font-weight-extra-light: 200;
+$font-weight-thin: 100;

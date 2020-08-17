@@ -1,0 +1,61 @@
+// サイドメニューのレイアウトに関わる設定です。
+
+.l-side {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 0 0.1rem 0 rgba(0, 0, 0, 0.2);
+  z-index: 100;
+
+  &.hidden {
+    display: none;
+  }
+
+  &.sp-hidden {
+    display: none;
+    @include mq(md) {
+      display: block;
+    }
+  }
+
+  &.landscape {
+    @media screen and (max-width: 824px) and (orientation: landscape){
+      display: none;
+    }
+  }
+
+  @include mq(md) {
+    top: 0;
+    width: 20rem;
+    background: $base-color-101;
+  }
+
+  &__logo {
+    padding: 3rem 4rem;
+    border-bottom: 0.1rem solid $base-color-300;
+    text-align: center;
+    display: none;
+
+    &.border-gray {
+      border-bottom: 0.1rem solid $base-color-402;
+
+    }
+
+    @include mq(md) {
+      display: block;
+    }
+
+    img {
+      width: 12.2rem;
+    }
+  }
+
+  &__adminTxt {
+    margin-top: 1.6rem;
+    padding-top: 1.6rem;
+    border-top: 0.1rem solid $base-color-401;
+    color: $base-color-100;
+    font-weight: $font-weight-bold;
+  }
+}

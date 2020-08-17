@@ -1,0 +1,719 @@
+// 個人や企業の一覧表示に関する設定です。
+
+/*****************************************
+個人および企業リスト（共通部分）
+******************************************/
+@mixin groupList-common($max-width, $margin-top) {
+  max-width: $max-width;
+  margin: $margin-top auto 0;
+
+  &__item {
+    width: 100%;
+    margin-top: 0.8rem;
+    background: $base-color-101;
+    border-radius: 1rem;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+
+    span {
+      display: block;
+    }
+  }
+
+  .list-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.4rem;
+    border: 0.1rem solid $base-color-104;
+    object-fit: cover;
+  }
+}
+
+@mixin font-sm($color: null) {
+  @if $color == gray {
+    color: $base-color-201;
+  } @else {
+    color: $base-color-200;
+  }
+  font-size: 1.2rem;
+  letter-spacing: 0.03em;
+}
+
+/*****************************************
+個人および企業リスト（個別設定）
+******************************************/
+// c_5-qr_2
+.groupList {
+  @include groupList-common(48rem, 2.4rem);
+  padding: 1.2rem;
+  background: $base-color-101;
+  border-radius: 1rem;
+
+  &__link {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid $base-color-104;
+  }
+
+  &__num {
+    width: 2rem;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  &__name {
+    width: calc(100% - 8.2rem);
+  }
+
+  &__font-01 {
+    letter-spacing: 0.02em;
+  }
+
+  &__font-04 {
+    @include font-sm(gray);
+  }
+
+  &__font-05 {
+    @include font-sm(gray);
+  }
+
+  &__img {
+    width: 4.2rem;
+    height: 5.6rem;
+  }
+}
+
+// a_1-qr_1
+.groupList-2 {
+  @include groupList-common(auto, 1.6rem);
+  display: flex;
+  flex-wrap: wrap;
+
+  @include mq(md) {
+    margin-right: -0.8rem;
+    margin-top: 0.8rem;
+  }
+
+  @media screen and(orientation: landscape) {
+    margin-right: -0.8rem;
+    margin-top: 0.8rem;
+  }
+
+  &__item {
+    @include mq(md) {
+      flex: 0 0 calc(50% - 0.8rem);
+      max-width: calc(50% - 0.8rem);
+      margin-right: 0.8rem;
+    }
+
+    @media screen and(orientation: landscape) {
+      flex: 0 0 calc(33.3% - 0.8rem);
+      max-width: calc(33.3% - 0.8rem);
+      margin-right: 0.8rem;
+    }
+
+    @include mq(lg) {
+      flex: 0 0 calc(33.3% - 0.8rem);
+      max-width: 24.4rem;
+    }
+  }
+
+  &__link {
+    padding: 1.2rem 1.2rem 1rem 4.8rem;
+    position: relative;
+
+    @include mq(md) {
+      padding: 1.2rem 1.2rem 4rem;
+    }
+
+    @media screen and(orientation: landscape) {
+      padding: 1.2rem 1.2rem 4rem;
+    }
+  }
+
+  &__move {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    @include mq(md) {
+      top: inherit;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+
+    @media screen and (orientation: landscape) {
+      top: inherit;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__name {
+    width: calc(100% - 5.6rem);
+  }
+
+  &__font-01 {
+    letter-spacing: 0.02em;
+  }
+
+  &__font-02 {
+    color: $base-color-201;
+    font-size: 1.2rem;
+  }
+
+  &__font-04 {
+    margin-top: 0.4rem;
+    @include font-sm();
+  }
+
+  &__font-05 {
+    @include font-sm();
+  }
+
+  &__img {
+    width: 4.6rem;
+    height: 6.2rem;
+  }
+}
+
+// a_3-add_1, b_1-add_1
+.groupList-3 {
+  @include groupList-common(48rem, 1.6rem);
+
+  &__item {
+    max-width: 42.4rem;
+    margin-left: auto;
+  }
+
+  &__link {
+    padding: 1.2rem;
+  }
+
+  &__name {
+    width: calc(100% - 5.6rem);
+  }
+
+  &__font-01 {
+    letter-spacing: 0.02em;
+  }
+
+  &__font-04 {
+    margin-top: 0.4rem;
+    @include font-sm(gray);
+  }
+
+  &__font-05 {
+    @include font-sm(gray);
+  }
+
+  &__font-03 {
+    @include font-sm(gray);
+  }
+
+  &__img {
+    width: 4.6rem;
+    height: 6.2rem;
+  }
+}
+
+// a_3-add_2, b_1-add_2
+.groupList-4 {
+  @include groupList-common(48rem, 1.6rem);
+
+  &__item {
+    max-width: 42.4rem;
+    margin-left: auto;
+
+    &.max-width-480 {
+      max-width: 48rem;
+    }
+  }
+
+  &__link {
+    padding: 1.6rem 1.2rem;
+  }
+
+  &__name {
+    width: calc(100% - 9.2rem);
+  }
+
+  &__font-01 {
+    margin-top: 0.4rem;
+    @include font-sm(gray);
+  }
+
+  &__font-03 {
+    letter-spacing: 0.02em;
+  }
+
+  &__img {
+    width: 8.2rem;
+    height: 4.8rem;
+  }
+}
+
+// a_3-add_3, b_1-add_3
+.groupList-5 {
+  @include groupList-common(48rem, 2.4rem);
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item.max-width-424 {
+    max-width: 42.4rem;
+  }
+
+  &__link {
+    padding: 1.6rem 1.2rem;
+  }
+
+  &__name {
+    width: calc(100% - 5.6rem);
+
+    &.btnAdd {
+      width: calc(100% - 12rem);
+    }
+  }
+
+  &__font-01 {
+    letter-spacing: 0.02em;
+  }
+
+  &__font-02 {
+    color: $base-color-201;
+    font-size: 1.2rem;
+  }
+
+  &__font-04 {
+    margin-top: 0.4rem;
+    @include font-sm();
+  }
+
+  &__font-05 {
+    @include font-sm();
+  }
+
+  &__img {
+    width: 4.6rem;
+    height: 6.2rem;
+  }
+}
+
+// com_search_1
+.groupList-6 {
+  @include groupList-common(48rem, 2.4rem);
+  display: flex;
+  flex-wrap: wrap;
+
+  &__link {
+    padding: 1.2rem;
+  }
+
+  &__name {
+    width: calc(100% - 5.6rem);
+  }
+
+  &__font-01 {
+    color: $base-color-201;
+  }
+
+  &__font-02 {
+    @include font-sm(gray);
+  }
+
+  &__font-04 {
+    margin-top: 0.4rem;
+    @include font-sm(gray);
+  }
+
+  &__font-05 {
+    @include font-sm(gray);
+  }
+
+  &__font-03 {
+    @include font-sm(gray);
+  }
+
+  &__img {
+    width: 4.6rem;
+    height: 6.2rem;
+  }
+}
+
+.groupList-7 {
+  @include groupList-common(48rem, 0.8rem);
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item.max-width-424 {
+    max-width: 42.4rem;
+    margin-left: auto;
+  }
+
+  &__link {
+    padding: 1.2rem;
+  }
+
+  &__name {
+    width: calc(100% - 12.4rem);
+  }
+
+  &__font-01 {
+    color: $base-color-105;
+    letter-spacing: 0.02em;
+  }
+
+  &__font-02 {
+    @include font-sm(gray);
+    letter-spacing: 0.08em;
+  }
+
+  &__font-04 {
+    margin-top: 0.4rem;
+    @include font-sm();
+    letter-spacing: 0;
+  }
+
+  &__font-05 {
+    color: $base-color-105;
+    font-size: 1.2rem;
+    letter-spacing: 0;
+  }
+
+  &__btn {
+    width: 6.4rem;
+    margin-left: 0.8rem;
+  }
+
+  &__img {
+    width: 4.6rem;
+    height: 6.2rem;
+  }
+}
+
+.groupList-8 {
+  @include groupList-common(48rem, 0.8rem);
+  display: flex;
+  flex-wrap: wrap;
+
+  &__link {
+    position: relative;
+    padding: 0.8rem 4rem;
+
+    // &::after {
+    // content: "";
+    // position: absolute;
+    // top: 50%;
+    // left:0;
+    // -webkit-transform: translateY(-50%);
+    // transform: translateY(-50%);
+    // width: 1.4rem;
+    // height: 1.4rem;
+    // padding: 2rem;
+    // background-image: url(../img/btn_move.svg);
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // cursor: pointer;
+    // }
+  }
+
+  &__move {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    // @include mq(md) {
+    //   top: inherit;
+    //   left: 50%;
+    //   bottom: 0;
+    //   transform: translateX(-50%);
+    // }
+  }
+
+  &__name {
+    // width: calc(100% - 8rem);
+    // width: 100%;
+    margin-left: 0.8rem;
+    margin-right: auto;
+  }
+
+  &__font-04 {
+    color: $base-color-201;
+    font-size: 1.2rem;
+  }
+
+  &__font-05 {
+    color: $base-color-201;
+    font-size: 1.2rem;
+  }
+
+  &__img {
+    width: 4.6rem;
+    height: 6.2rem;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}
+
+
+.groupList-9 {
+  @include groupList-common(48rem, 0.8rem);
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item.max-width-424 {
+    max-width: 42.4rem;
+    margin-left: auto;
+  }
+
+  &__link {
+    padding: 1.2rem;
+  }
+
+  &__name {
+    width: calc(100% - 12.4rem);
+  }
+
+  &__font-01 {
+    color: $base-color-105;
+    letter-spacing: 0.02em;
+  }
+
+  &__font-04 {
+    margin-top: 0.4rem;
+    @include font-sm();
+    letter-spacing: 0;
+  }
+
+  &__font-05 {
+    @include font-sm(gray);
+    letter-spacing: 0;
+  }
+
+  &__btn {
+    width: 6.4rem;
+    margin-left: 0.8rem;
+  }
+
+  &__img {
+    width: 4.6rem;
+    height: 6.2rem;
+  }
+}
+
+
+.groupList-10 {
+  @include groupList-common(48rem, 0.8rem);
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item.max-width-424 {
+    max-width: 42.4rem;
+    margin-left: auto;
+  }
+
+  &__link {
+    padding: 1.2rem;
+  }
+
+  &__name {
+    width: calc(100% - 12.4rem);
+  }
+
+  &__font-01 {
+    color: $base-color-105;
+    letter-spacing: 0.02em;
+  }
+
+  &__font-04 {
+    margin-top: 0.4rem;
+    @include font-sm(gray);
+    letter-spacing: 0;
+  }
+
+  &__font-05 {
+    color: $base-color-105;
+    font-size: 1.2rem;
+    letter-spacing: 0;
+  }
+
+  &__btn {
+    width: 6.4rem;
+    margin-left: 0.8rem;
+  }
+
+  &__img {
+    width: 4.6rem;
+    height: 6.2rem;
+  }
+}
+
+.groupList-11 {
+  @include groupList-common(48rem, 0);
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item.max-width-424 {
+    max-width: 42.4rem;
+  }
+
+  &__link {
+    padding: 1.6rem;
+
+    &::after {
+      content: "";
+      display: block;
+      background-image: url('../../img/ico_arrow_1.svg');
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__font-01 {
+    font-size: 1.4rem;
+    color: $base-color-105;
+    letter-spacing: 0.02em;
+  }
+
+  &__font-03 {
+    @include font-sm();
+  }
+
+  &__font-06 {
+    letter-spacing: 0;
+  }
+}
+
+.groupList {
+  @include groupList-common(48rem, 2.4rem);
+  padding: 1.2rem;
+  background: $base-color-101;
+  border-radius: 1rem;
+
+  &__link {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid $base-color-104;
+  }
+
+  &__num {
+    width: 2rem;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  &__name {
+    width: calc(100% - 8.2rem);
+  }
+
+  &__font-01 {
+    letter-spacing: 0.02em;
+  }
+
+  &__font-04 {
+    @include font-sm(gray);
+  }
+
+  &__font-05 {
+    @include font-sm(gray);
+  }
+
+  &__img {
+    width: 4.2rem;
+    height: 5.6rem;
+  }
+}
+
+// admin
+.groupList-13 {
+  @include groupList-common(auto, 1.6rem);
+  display: flex;
+  flex-wrap: wrap;
+
+  @include mq(md) {
+    margin-right: -0.8rem;
+    margin-top: 0.8rem;
+  }
+
+  @media screen and(orientation: landscape) {
+    margin-right: -0.8rem;
+    margin-top: 0.8rem;
+  }
+
+  &__item {
+    @include mq(md) {
+      flex: 0 0 calc(50% - 0.8rem);
+      max-width: calc(50% - 0.8rem);
+      margin-right: 0.8rem;
+    }
+
+    @media screen and(orientation: landscape) {
+      flex: 0 0 calc(33.3% - 0.8rem);
+      max-width: calc(33.3% - 0.8rem);
+      margin-right: 0.8rem;
+    }
+
+    @include mq(lg) {
+      flex: 0 0 calc(33.3% - 0.8rem);
+      max-width: 24.4rem;
+    }
+  }
+
+  &__link {
+    padding: 1.2rem;
+  }
+
+  &__name {
+    width: calc(100% - 5.6rem);
+  }
+
+  &__font-01 {
+    letter-spacing: 0.02em;
+  }
+
+  &__font-02 {
+    color: $base-color-201;
+    font-size: 1.2rem;
+  }
+
+  &__font-04 {
+    margin-top: 0.4rem;
+    @include font-sm();
+  }
+
+  &__font-05 {
+    @include font-sm();
+  }
+
+  &__img {
+    width: 4.6rem;
+    height: 6.2rem;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+  }
+}
