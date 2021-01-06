@@ -51,7 +51,7 @@
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11",
-    "axios": "^0.19"
+    "axios": "^0.21"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
